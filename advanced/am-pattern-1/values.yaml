@@ -58,7 +58,7 @@ wso2:
       # Container image configurations
       # If a custom image must be used, uncomment 'dockerRegistry' and provide its value
       dockerRegistry: "teakt"
-      imageName: "debug"
+      imageName: "custom"
       imageTag: "latest"
       # Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Always
@@ -138,7 +138,7 @@ wso2:
       imageName: "wso2mi"
       imageTag: "4.1.0"
       # Number of deployment replicas
-      replicas: 2
+      replicas: 1
       strategy:
         rollingUpdate:
           # The maximum number of pods that can be scheduled above the desired number of pods.
