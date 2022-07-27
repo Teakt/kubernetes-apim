@@ -57,9 +57,9 @@ wso2:
     am:
       # Container image configurations
       # If a custom image must be used, uncomment 'dockerRegistry' and provide its value
-      # dockerRegistry: ""
-      imageName: "teakt"
-      imageTag: "debugging"
+      dockerRegistry: "teakt"
+      imageName: "debugging"
+      imageTag: "latest"
       # Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Always
 
@@ -84,7 +84,7 @@ wso2:
           cpu: "1000m"
         limits:
           memory: "3Gi"
-          cpu: "1000m"
+          cpu: "2000m"
         # JVM settings
         # These are the resource allocation configurations associated with the JVM
         # Refer to the official documentation for advanced details (https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/)
