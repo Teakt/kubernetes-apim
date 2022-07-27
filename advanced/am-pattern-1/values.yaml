@@ -58,8 +58,8 @@ wso2:
       # Container image configurations
       # If a custom image must be used, uncomment 'dockerRegistry' and provide its value
       # dockerRegistry: ""
-      imageName: "wso2am"
-      imageTag: "4.1.0"
+      imageName: "teakt"
+      imageTag: "debugging"
       # Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Always
 
@@ -80,10 +80,10 @@ wso2:
         # These are the minimum resource recommendations for running WSO2 API Management product profiles
         # as per official documentation (https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/)
         requests:
-          memory: "2Gi"
+          memory: "1Gi"
           cpu: "2000m"
         limits:
-          memory: "3Gi"
+          memory: "2Gi"
           cpu: "3000m"
         # JVM settings
         # These are the resource allocation configurations associated with the JVM
@@ -108,7 +108,7 @@ wso2:
         management:
           enabled: true
           # Hostname for API Manager Carbon Management Console, Publisher, DevPortal and Admin Portal
-          hostname: "am.wso2.com"
+          hostname: "apim-pprod.jobology.fr"
           # Annotations for the API Manager Publisher-DevPortal services Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
@@ -119,14 +119,14 @@ wso2:
         gateway:
           enabled: true
           # Hostname for Gateway profile
-          hostname: "gateway.am.wso2.com"
+          hostname: "api-pprod.jobology.fr"
           # Annotations for the API Manager Gateway service Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
             nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         websub:
           enabled: true
-          hostname: "websub.am.wso2.com"
+          hostname: "websub.apim-pprod.jobology.fr"
           # Annotations for the API Manager WebSub service Ingress
           annotations:
             kubernetes.io/ingress.class: "nginx"
@@ -181,7 +181,7 @@ wso2:
         # Configure management ingress
         management:
           # Hostname for the Micro Integrator management endpoint.
-          hostname: "management.mi.wso2.com"
+          hostname: "mi-pprod.jobology.fr"
           # Annotations for the Micro Integrator management Ingress.
           annotations:
             kubernetes.io/ingress.class: "nginx"
