@@ -81,10 +81,10 @@ wso2:
         # as per official documentation (https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/)
         requests:
           memory: "2Gi"
-          cpu: "500m"
+          cpu: "550m"
         limits:
           memory: "3Gi"
-          cpu: "800m"
+          cpu: "600m"
         # JVM settings
         # These are the resource allocation configurations associated with the JVM
         # Refer to the official documentation for advanced details (https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/)
@@ -163,12 +163,12 @@ wso2:
           # The minimum amount of memory that should be allocated for a Pod
           memory: "512Mi"
           # The minimum amount of CPU that should be allocated for a Pod
-          cpu: "250m"
+          cpu: "200m"
         limits:
           # The maximum amount of memory that should be allocated for a Pod
           memory: "1Gi"
           # The maximum amount of CPU that should be allocated for a Pod
-          cpu: "500m"
+          cpu: "300m"
       # Environment variables for the Micro integrator deployment.
       envs:
       #  ENV_NAME: ENV_VALUE
