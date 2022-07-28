@@ -80,10 +80,10 @@ wso2:
         # These are the minimum resource recommendations for running WSO2 API Management product profiles
         # as per official documentation (https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/)
         requests:
-          memory: "1Gi"
-          cpu: "400m"
-        limits:
           memory: "2Gi"
+          cpu: "500m"
+        limits:
+          memory: "3Gi"
           cpu: "800m"
         # JVM settings
         # These are the resource allocation configurations associated with the JVM
