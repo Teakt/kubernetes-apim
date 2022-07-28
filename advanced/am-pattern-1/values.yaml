@@ -58,7 +58,7 @@ wso2:
       # Container image configurations
       # If a custom image must be used, uncomment 'dockerRegistry' and provide its value
       dockerRegistry: "teakt"
-      imageName: "custom"
+      imageName: "wso2final"
       imageTag: "latest"
       # Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Always
@@ -80,10 +80,10 @@ wso2:
         # These are the minimum resource recommendations for running WSO2 API Management product profiles
         # as per official documentation (https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/)
         requests:
-          memory: "2Gi"
-          cpu: "550m"
+          memory: "1Gi"
+          cpu: "600m"
         limits:
-          memory: "3Gi"
+          memory: "2Gi"
           cpu: "600m"
         # JVM settings
         # These are the resource allocation configurations associated with the JVM
@@ -161,14 +161,14 @@ wso2:
       resources:
         requests:
           # The minimum amount of memory that should be allocated for a Pod
-          memory: "512Mi"
+          memory: "100Mi"
           # The minimum amount of CPU that should be allocated for a Pod
-          cpu: "200m"
+          cpu: "50m"
         limits:
           # The maximum amount of memory that should be allocated for a Pod
-          memory: "1Gi"
+          memory: "300Mi"
           # The maximum amount of CPU that should be allocated for a Pod
-          cpu: "300m"
+          cpu: "100m"
       # Environment variables for the Micro integrator deployment.
       envs:
       #  ENV_NAME: ENV_VALUE
