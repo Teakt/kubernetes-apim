@@ -15,7 +15,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "am-pattern-1.resource.prefix" . }}-am-1-conf
+  name: {{ template "am-pattern-1.resource.prefix" . }}-am-2-conf
   namespace : {{ .Release.Namespace }}
   {{ if .Values.wso2.deployment.am.config }}
 data:
@@ -36,7 +36,7 @@ data:
 
     [super_admin]
     username = "admin"
-    password = "admin"
+    password = "JoBology2022?"
     create_admin_account = true
 
     [user_store]
@@ -63,7 +63,7 @@ data:
     alias =  "wso2carbon"
     key_password =  "wso2carbon"
 
-    #[keystore.listener_profile]	
+    #[keystore.listener_profile]		
     #bind_address = "0.0.0.0"
 
     #[keystore.primary]
@@ -196,7 +196,7 @@ data:
     allow_credentials = false
 
     [apim.throttling]
-    event_duplicate_url = ["tcp://{{ template "am-pattern-1.resource.prefix" . }}-am-2-service:5672"]
+    event_duplicate_url = ["tcp://{{ template "am-pattern-1.resource.prefix" . }}-am-1-service:5672"]
     #enable_data_publishing = true
     #enable_policy_deploy = true
     #enable_blacklist_condition = true
@@ -219,13 +219,13 @@ data:
     #port = 10005
 
     [[apim.throttling.url_group]]
-    traffic_manager_urls = ["tcp://{{ template "am-pattern-1.resource.prefix" . }}-am-1-service:9611"]
-    traffic_manager_auth_urls = ["ssl://{{ template "am-pattern-1.resource.prefix" . }}-am-1-service:9711"]
+    traffic_manager_urls = ["tcp://{{ template "am-pattern-1.resource.prefix" . }}-am-2-service:9611"]
+    traffic_manager_auth_urls = ["ssl://{{ template "am-pattern-1.resource.prefix" . }}-am-2-service:9711"]
     type = "loadbalance"
 
     [[apim.throttling.url_group]]
-    traffic_manager_urls = ["tcp://{{ template "am-pattern-1.resource.prefix" . }}-am-2-service:9611"]
-    traffic_manager_auth_urls = ["ssl://{{ template "am-pattern-1.resource.prefix" . }}-am-2-service:9711"]
+    traffic_manager_urls = ["tcp://{{ template "am-pattern-1.resource.prefix" . }}-am-1-service:9611"]
+    traffic_manager_auth_urls = ["ssl://{{ template "am-pattern-1.resource.prefix" . }}-am-1-service:9711"]
     type = "loadbalance"
 
     #[apim.workflow]
@@ -293,10 +293,10 @@ data:
     [transport.https.properties]
     proxyPort = 443
 
-    [oauth.grant_type.token_exchange]	
-    enable = true	
-    allow_refresh_tokens = true	
-    iat_validity_period = "1h"
+    [oauth.grant_type.token_exchange]		
+    enable = true		
+    allow_refresh_tokens = true		
+    iat_validity_period = "1h"	
 
     [transport.passthru_https.sender.parameters]
     HostnameVerifier = "AllowAll"

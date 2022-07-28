@@ -36,7 +36,7 @@ data:
 
     [super_admin]
     username = "admin"
-    password = "admin"
+    password = "JoBology2022?"
     create_admin_account = true
 
     [user_store]
