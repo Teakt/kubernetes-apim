@@ -81,10 +81,10 @@ wso2:
         # as per official documentation (https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/)
         requests:
           memory: "2Gi"
-          cpu: "2000m"
+          cpu: "1200m"
         limits:
           memory: "3Gi"
-          cpu: "3000m"
+          cpu: "1500m"
         # JVM settings
         # These are the resource allocation configurations associated with the JVM
         # Refer to the official documentation for advanced details (https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/)
